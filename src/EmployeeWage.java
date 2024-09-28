@@ -6,9 +6,10 @@ public class EmployeeWage {
     public static final int MAX_HRS_IN_MONTH=10;
 
     public static void main(String[] args) {
-
         System.out.println("Welcome To EmployeeWageComputationProgram");
-
+        computeWage();
+    }
+    public static int computeWage(){
         int empHrs;
         int totalEmpHrs=0;
         int totalWorkingDays=0;
@@ -17,6 +18,7 @@ public class EmployeeWage {
        while (totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS){
            totalWorkingDays++;
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+
             switch (empCheck) {
                 case IS_PART_TIME:
                     empHrs = 4;
@@ -33,5 +35,6 @@ public class EmployeeWage {
         }
         int totalEmpWage=totalEmpHrs*EMP_RATE_PER_HOUR;
         System.out.println("Total EMP Wage:"+totalEmpWage);
+        return totalEmpWage;
     }
 }
